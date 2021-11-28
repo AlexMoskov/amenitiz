@@ -6,7 +6,9 @@ class Products extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            products: []
+            products: [],
+            message: null,
+            error: null
         };
     }
 
@@ -41,6 +43,7 @@ class Products extends React.Component {
         })
             .then(response => {
                 if (response.ok) {
+                    this.setState({ message: true, error: null })
                     return response.json();
                 }
                 throw new Error("Network response was not ok.");
@@ -50,7 +53,7 @@ class Products extends React.Component {
     }
 
     render() {
-        const { products } = this.state;
+        const { products, message } = this.state;
         const allProducts = products.map((product, index) => (
             <div key={index} className="col-md-6 col-lg-4">
                 <div className="card mb-4">
@@ -81,11 +84,15 @@ class Products extends React.Component {
                 </section>
                 <div className="py-5">
                     <main className="container">
+                        {message && <div className="alert alert-success alert-dismissible fade show" role="alert">
+                            The product has been successfully added to your cart.
+                        </div>}
+
                         <div className="row">
                             { allProducts }
                         </div>
-                        <Link to="/" className="btn btn-link">
-                            Home
+                        <Link to="/" className="btn btn-lg btn-secondary">
+                            Back home
                         </Link>
                         <div className="text-right mb-3 right">
                             <Link to="/cart" className="btn btn-lg btn-info">
