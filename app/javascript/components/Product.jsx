@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import apiService from '../services/apiService';
-import CurrencyFormat from 'react-currency-format';
 
 class Product extends React.Component {
     constructor(props) {
@@ -41,7 +40,7 @@ class Product extends React.Component {
                                     <tr>
                                         <td>{product.product_code}</td>
                                         <td>{product.name}</td>
-                                        <td><CurrencyFormat value={product.price} displayType={'text'} thousandSeparator={true} suffix={' €'} /></td>
+                                        <td>{product.price}&nbsp;€</td>
                                     </tr>
                                 </tbody>
                             </table>

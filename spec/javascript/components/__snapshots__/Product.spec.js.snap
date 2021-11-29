@@ -34,25 +34,7 @@ exports[`Product renders Product component 1`] = `
               <td />
               <td />
               <td>
-                <CurrencyFormat
-                  allowNegative={true}
-                  decimalSeparator="."
-                  displayType="text"
-                  fixedDecimalScale={false}
-                  isAllowed={[Function]}
-                  isNumericString={false}
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseUp={[Function]}
-                  onValueChange={[Function]}
-                  prefix=""
-                  suffix=" €"
-                  thousandSeparator={true}
-                  thousandSpacing="3"
-                  type="text"
-                />
+                 €
               </td>
             </tr>
           </tbody>

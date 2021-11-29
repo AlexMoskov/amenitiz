@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import apiService from '../services/apiService';
-import CurrencyFormat from 'react-currency-format';
 
 class Purchases extends React.Component {
     constructor(props) {
@@ -24,8 +23,8 @@ class Purchases extends React.Component {
                 <div className="card mb-4">
                     <div className="card-body"><strong>Products: </strong>
                         { purchase.products.map((product, i) => (
-                            <span key={i} title={product.name}>{product.product_code}&nbsp;</span> ))} &nbsp;
-                        <span className='right'><strong>Total price: </strong><CurrencyFormat value={purchase.total} displayType={'text'} thousandSeparator={true} suffix={' €'}/></span>
+                            <span key={i} title={product.name}>{product.product_code}&nbsp;</span> ))}&nbsp;
+                        <span className='right'><strong>Total price:</strong>&nbsp;{purchase.total}&nbsp;€</span>
                     </div>
                 </div>
             </div>

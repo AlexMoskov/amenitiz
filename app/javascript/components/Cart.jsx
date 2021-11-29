@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import apiService from '../services/apiService';
-import CurrencyFormat from 'react-currency-format';
 
 class Cart extends React.Component {
     constructor(props) {
@@ -48,8 +47,7 @@ class Cart extends React.Component {
                     <div className="card-body">
                         <h5 className="card-title">
                             <span className='left'>{product.name}</span>
-                            <span className='right'><CurrencyFormat value={product.price} displayType={'text'}
-                                                                    thousandSeparator={true} suffix={' €'}/></span>
+                            <span className='right'>{product.price}&nbsp;€</span>
                         </h5>
                         <br/>
                         <div className="row">
@@ -57,7 +55,7 @@ class Cart extends React.Component {
                                 <span className="btn-success left">Qty: {product.quantity}</span>
                             </div>
                             <div className="col-md-6 col-lg-6">
-                                <span className="right">Total: {product.total}</span>
+                                <span className="right">Total: {product.total}&nbsp;€</span>
                             </div>
                         </div>
                         <br/>

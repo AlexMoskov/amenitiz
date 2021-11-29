@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import apiService from '../services/apiService';
-import CurrencyFormat from 'react-currency-format';
 
 class Products extends React.Component {
     constructor(props) {
@@ -35,7 +34,7 @@ class Products extends React.Component {
                     <div className="card-body">
                         <h5 className="card-title">
                             <span className='left'>{product.name}</span>
-                            <span className='right'><CurrencyFormat value={product.price} displayType={'text'} thousandSeparator={true} suffix={' €'} /></span>
+                            <span className='right'>{product.price}&nbsp;€</span>
                         </h5>
                         <br/>
                         <Link to={`/products/${product.id}`} className="btn custom-button left">
