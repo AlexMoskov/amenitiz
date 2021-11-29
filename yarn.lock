@@ -2093,10 +2093,10 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
-bootstrap@^4.3.1:
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.6.1.tgz#bc25380c2c14192374e8dec07cf01b2742d222a2"
-  integrity sha512-0dj+VgI9Ecom+rvvpNZ4MUZJz8dcX7WCX+eTID9+/8HgOkv3dsRzi8BGeZJCQU6flWQVYxwTQnEZFrmJSEO7og==
+bootstrap@^5.1.3:
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.1.3.tgz#ba081b0c130f810fa70900acbc1c6d3c28fa8f34"
+  integrity sha512-fcQztozJ8jToQWXxVuEyXWW+dSo8AiXWKwiSSrKWsRB/Qt+Ewwza+JWoLKiTuQLaEPhdNAJ7+Dosc9DOIqNy7Q==
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -7874,18 +7874,7 @@ sass-loader@10.1.1:
     schema-utils "^3.0.0"
     semver "^7.3.2"
 
-sass-loader@^10:
-  version "10.2.0"
-  resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-10.2.0.tgz#3d64c1590f911013b3fa48a0b22a83d5e1494716"
-  integrity sha512-kUceLzC1gIHz0zNJPpqRsJyisWatGYNFRmv2CKZK2/ngMJgLqxTbXwe/hJ85luyvZkgqU3VlJ33UVF2T/0g6mw==
-  dependencies:
-    klona "^2.0.4"
-    loader-utils "^2.0.0"
-    neo-async "^2.6.2"
-    schema-utils "^3.0.0"
-    semver "^7.3.2"
-
-sass@^1.38.0, sass@^1.43.5:
+sass@^1.38.0:
   version "1.43.5"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.43.5.tgz#25a9d91dd098793ef7229d7b04dd3daae2fc4a65"
   integrity sha512-WuNm+eAryMgQluL7Mbq9M4EruyGGMyal7Lu58FfnRMVWxgUzIvI7aSn60iNt3kn5yZBMR7G84fAGDcwqOF5JOg==
