@@ -4,6 +4,7 @@ import Home from "../components/Home";
 import Products from "../components/Products";
 import Product from "../components/Product";
 import Cart from "../components/Cart";
+import Purchases from "../components/Purchases";
 
 export default (
     <Router>
@@ -12,6 +13,7 @@ export default (
             <Route exact path="/products" component={Products}/>
             <Route exact path="/products/:id" component={Product}/>
             <Route exact path="/cart" component={Cart}/>
+            <Route exact path="/purchases" component={Purchases}/>
         </Switch>
     </Router>
 );

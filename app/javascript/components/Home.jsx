@@ -10,11 +10,11 @@ export default () => (
                     A curated list of products for the best shopping.
                 </p>
                 <hr className="my-4" />
-                <Link
-                    to="/products"
-                    className="btn btn-lg custom-button"
-                    role="button">
+                <Link to="/products" className="btn btn-lg custom-button" role="button">
                     View Products
+                </Link>
+                <Link to="/purchases" className="btn btn-lg btn-primary right">
+                    Your purchases
                 </Link>
             </div>
         </div>

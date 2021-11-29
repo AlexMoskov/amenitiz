@@ -54,6 +54,33 @@ class Cart extends React.Component {
             .catch(error => console.log(error.message));
     }
 
+    createPurchase() {
+        const url = "/api/v1/purchases";
+        const { products } = this.state;
+
+        const body = {
+            products: products
+        };
+
+        const token = document.querySelector('meta[name="csrf-token"]').content;
+        fetch(url, {
+            method: "POST",
+            headers: {
+                "X-CSRF-Token": token,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error("Network response was not ok.");
+            })
+            .then(response => this.props.history.push(`/purchases`))
+            .catch(error => console.log(error.message));
+    }
+
     render() {
         const { products, price, message } = this.state;
         const allProducts = products.map((product, index) => (
@@ -87,7 +114,7 @@ class Cart extends React.Component {
                     <div className="container py-5">
                         <h1 className="display-4">Your Cart</h1>
                         <p className="lead text-muted">
-                            Please check your shopping cart.
+                            A list of all your purchases.
                         </p>
                     </div>
                 </section>
@@ -106,9 +133,7 @@ class Cart extends React.Component {
                                 Back to Products
                             </Link>
                             <div className="text-right mb-3 right">
-                                <Link to="/buy" className="btn btn-lg btn-info">
-                                    Buy
-                                </Link>
+                                <a className="btn btn-lg btn-info" onClick={() => this.createPurchase()}>Buy</a>
                             </div>
                         </div>
                     </main>

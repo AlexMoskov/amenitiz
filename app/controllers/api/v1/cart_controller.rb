@@ -1,6 +1,6 @@
 class Api::V1::CartController < ApplicationController
   def index
-    cart = session[:cart] || {}
+    session[:cart] ||= {}
     products = session[:cart]['products'] ||= {}
     items = products.map do |code, quantity|
       p = Product.find_by(product_code: code)

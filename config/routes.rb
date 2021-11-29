@@ -9,6 +9,9 @@ Rails.application.routes.draw do
       get 'cart', to: 'cart#index'
       put 'cart', to: 'cart#update'
       delete '/cart/:product_id', to: 'cart#destroy'
+
+      get 'purchases', to: 'purchases#index'
+      post 'purchases', to: 'purchases#create'
     end
   end
 
