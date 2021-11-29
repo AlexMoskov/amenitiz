@@ -6,7 +6,8 @@ class Api::V1::PurchasesController < ApplicationController
   def create
     session[:user] ||= {}
     session[:user]['purchases'] ||= []
-    session[:user]['purchases'] << ::CalculatePurchaseService.new(params[:products]).run
+    purchase = ::CalculatePurchaseService.new(params[:products]).run
+    session[:user]['purchases'] << purchase if purchase[:total] > 0
     session[:cart] ||= {}
     session[:cart]['products'] = {}
 
