@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import apiService from '../services/apiService';
 import CurrencyFormat from 'react-currency-format';
 
 class Cart extends React.Component {
@@ -18,65 +19,23 @@ class Cart extends React.Component {
     }
 
     refreshCart() {
-        const url = `/api/v1/cart`;
-
-        fetch(url)
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                }
-                throw new Error("Network response was not ok.");
-            })
+        apiService.getCart()
             .then(response => this.setState({ products: response.products, price: response.price }))
             .catch(() => this.props.history.push("/products"));
     }
 
     removeProduct(product_id) {
-        const url = `/api/v1/cart/${product_id}`;
-        const token = document.querySelector('meta[name="csrf-token"]').content;
-
-        fetch(url, {
-            method: "DELETE",
-            headers: {
-                "X-CSRF-Token": token,
-                "Content-Type": "application/json"
-            }
-        })
+       apiService.removeProductFromCart(product_id)
             .then(response => {
-                if (response.ok) {
-                    this.setState({ message: true, error: null })
-                    this.refreshCart();
-                    return response.json();
-                }
-                throw new Error("Network response was not ok.");
+                this.setState({ message: true, error: null })
+                this.refreshCart();
             })
-            .then(response => this.props.history.push(`/products`))
             .catch(error => console.log(error.message));
     }
 
     createPurchase() {
-        const url = "/api/v1/purchases";
         const { products } = this.state;
-
-        const body = {
-            products: products
-        };
-
-        const token = document.querySelector('meta[name="csrf-token"]').content;
-        fetch(url, {
-            method: "POST",
-            headers: {
-                "X-CSRF-Token": token,
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(body)
-        })
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                }
-                throw new Error("Network response was not ok.");
-            })
+        apiService.createPurchase(products)
             .then(response => this.props.history.push(`/purchases`))
             .catch(error => console.log(error.message));
     }

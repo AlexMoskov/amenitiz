@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import apiService from '../services/apiService';
 import CurrencyFormat from 'react-currency-format';
 
 class Purchases extends React.Component {
@@ -11,43 +12,9 @@ class Purchases extends React.Component {
     }
 
     componentDidMount() {
-        const url = "/api/v1/purchases";
-        fetch(url)
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                }
-                throw new Error("Network response was not ok.");
-            })
+        apiService.getPurchases()
             .then(response => this.setState({ purchases: response.purchases }))
             .catch(() => this.props.history.push("/"));
-    }
-
-    addToCart(product_id) {
-        const url = "/api/v1/cart";
-
-        const body = {
-            product_id: product_id
-        };
-
-        const token = document.querySelector('meta[name="csrf-token"]').content;
-        fetch(url, {
-            method: "PUT",
-            headers: {
-                "X-CSRF-Token": token,
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(body)
-        })
-            .then(response => {
-                if (response.ok) {
-                    this.setState({ message: true, error: null })
-                    return response.json();
-                }
-                throw new Error("Network response was not ok.");
-            })
-            .then(response => this.props.history.push(`/products`))
-            .catch(error => console.log(error.message));
     }
 
     allPurchases() {

@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders Home component 1`] = `
+<div
+  className="vw-100 vh-100 primary-color d-flex align-items-center justify-content-center"
+>
+  <div
+    className="jumbotron jumbotron-fluid bg-transparent"
+  >
+    <div
+      className="container secondary-color"
+    >
+      <h1
+        className="display-4"
+      >
+        Best Products
+      </h1>
+      <p
+        className="lead"
+      >
+        A curated list of products for the best shopping.
+      </p>
+      <hr
+        className="my-4"
+      />
+      <Link
+        className="btn btn-lg custom-button"
+        role="button"
+        to="/products"
+      >
+        View Products
+      </Link>
+      <Link
+        className="btn btn-lg btn-primary right"
+        to="/purchases"
+      >
+        Your purchases
+      </Link>
+    </div>
+  </div>
+</div>
+`;

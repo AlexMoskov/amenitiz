@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import apiService from '../services/apiService';
 import CurrencyFormat from 'react-currency-format';
 
 class Product extends React.Component {
@@ -15,15 +16,7 @@ class Product extends React.Component {
             }
         } = this.props;
 
-        const url = `/api/v1/products/${id}`;
-
-        fetch(url)
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                }
-                throw new Error("Network response was not ok.");
-            })
+        apiService.getProduct(id)
             .then(response => this.setState({ product: response }))
             .catch(() => this.props.history.push("/products"));
     }

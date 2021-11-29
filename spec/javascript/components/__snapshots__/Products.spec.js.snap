@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Products renders Products component 1`] = `
+<Fragment>
+  <section
+    className="jumbotron jumbotron-fluid text-center"
+  >
+    <div
+      className="container py-5"
+    >
+      <h1
+        className="display-4"
+      >
+        Products for every occasion
+      </h1>
+      <p
+        className="lead text-muted"
+      >
+        We have pulled together our most popular products for you.
+      </p>
+    </div>
+  </section>
+  <div
+    className="py-5"
+  >
+    <main
+      className="container"
+    >
+      <div
+        className="row"
+      />
+      <Link
+        className="btn btn-lg btn-secondary"
+        to="/"
+      >
+        Back home
+      </Link>
+      <div
+        className="text-right mb-3 right"
+      >
+        <Link
+          className="btn btn-lg btn-info"
+          to="/cart"
+        >
+          Got to cart
+        </Link>
+      </div>
+    </main>
+  </div>
+</Fragment>
+`;

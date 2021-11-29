@@ -30,9 +30,12 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'pg'
 
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry'
 end
 
 group :development do
@@ -44,15 +47,28 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'pry'
 end
 
 group :test do
+  # RSpec
+  gem 'rspec'
+  gem 'rspec-rails' #, github: 'rspec/rspec-rails', branch: 'rails-6-1-dev'
+  gem 'rspec-set'
+  gem 'rspec-activemodel-mocks' # For stub_model and mock_model
+  gem 'rspec-given'
+
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+
+  gem 'rails-controller-testing'
+  gem 'database_cleaner-active_record'
+
+  gem 'timecop'
+  gem 'simplecov'
+  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

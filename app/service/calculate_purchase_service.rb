@@ -36,9 +36,9 @@ class CalculatePurchaseService
       end
     end
 
-    { products: items, total: total }
+    { products: items, total: total, success: true }
   rescue => e
     Rails.logger.error(e.backtrace.join('\n'))
-    { products: [], total: 0.00 }
+    { products: [], total: 0.00, success: false }
   end
 end

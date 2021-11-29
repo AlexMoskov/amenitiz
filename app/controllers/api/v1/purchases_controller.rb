@@ -7,9 +7,11 @@ class Api::V1::PurchasesController < ApplicationController
     session[:user] ||= {}
     session[:user]['purchases'] ||= []
     purchase = ::CalculatePurchaseService.new(params[:products]).run
-    session[:user]['purchases'] << purchase if purchase[:total] > 0
-    session[:cart] ||= {}
-    session[:cart]['products'] = {}
+    if purchase[:success]
+      session[:user]['purchases'] << purchase
+      session[:cart] ||= {}
+      session[:cart]['products'] = {}
+    end
 
     render json: :ok
   end

@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product renders Product component 1`] = `
+<Fragment>
+  <div
+    className="py-5"
+  >
+    <main
+      className="container"
+    >
+      <div
+        className="position-relative d-flex align-items-center justify-content-center"
+      >
+        <table
+          border="2"
+          cellPadding="7"
+          width="100%"
+        >
+          <thead>
+            <tr>
+              <th>
+                Product Code
+              </th>
+              <th>
+                Product name
+              </th>
+              <th>
+                Price
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td />
+              <td />
+              <td>
+                <CurrencyFormat
+                  allowNegative={true}
+                  decimalSeparator="."
+                  displayType="text"
+                  fixedDecimalScale={false}
+                  isAllowed={[Function]}
+                  isNumericString={false}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseUp={[Function]}
+                  onValueChange={[Function]}
+                  prefix=""
+                  suffix=" €"
+                  thousandSeparator={true}
+                  thousandSpacing="3"
+                  type="text"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br />
+      <div
+        className="alert alert-warning"
+      >
+        <h3>
+          Promotion from our company!
+        </h3>
+        <p>
+          Buy-one-get-one-free offers and green tea.
+        </p>
+      </div>
+      <div
+        className="container py-5"
+      >
+        <Link
+          className="btn btn-lg btn-secondary"
+          to="/products"
+        >
+          Back to products
+        </Link>
+      </div>
+    </main>
+  </div>
+</Fragment>
+`;

@@ -41,3 +41,5 @@ yarn-debug.log*
 
 
 /.idea/amenitiz.iml
+
+coverage/*

@@ -10,7 +10,7 @@ class Api::V1::CartController < ApplicationController
         name: p.name,
         price: p.price,
         quantity: quantity,
-        total: p.price * quantity
+        total: (p.price * quantity).round(2)
       }
     end
 
@@ -32,6 +32,8 @@ class Api::V1::CartController < ApplicationController
     cart = session[:cart] || {}
     products = session[:cart]['products'] ||= {}
     products.delete(product.product_code) if product
+
+    render json: :ok
   end
 
   private
