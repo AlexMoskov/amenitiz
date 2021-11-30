@@ -21,24 +21,24 @@ class Api::V1::CartController < ApplicationController
     session[:cart] ||= {}
     session[:cart]['products'] ||= {}
 
-    render json: :not_found unless product
+    render json: :not_found and return unless product
 
     session[:cart]['products'][product.product_code] = session[:cart]['products'][product.product_code].to_i + 1
-
     render json: :ok
   end
 
   def destroy
     cart = session[:cart] || {}
     products = session[:cart]['products'] ||= {}
-    products.delete(product.product_code) if product
+    render json: :not_found and return unless product
 
+    products.delete(product.product_code)
     render json: :ok
   end
 
   private
 
   def product
-    @product ||= Product.find(params[:product_id])
+    @product ||= Product.find_by(id: params[:product_id])
   end
 end

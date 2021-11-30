@@ -2,7 +2,7 @@ class CalculatePurchaseService
   attr_reader :products
 
   def initialize(products)
-    @products = products
+    @products = products || []
   end
 
   def run
