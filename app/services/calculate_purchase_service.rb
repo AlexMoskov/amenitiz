@@ -11,9 +11,12 @@ class CalculatePurchaseService
 
     products.each do |p|
       product = Product.find_by(id: p[:id])
-      quantity = p[:quantity].to_i
+      next if product.blank?
 
-      case product&.product_code
+      quantity = p[:quantity].to_i
+      p[:price] ||= product.price
+
+      case product.product_code
       when 'CF1'
         # If you buy 3 or more coffees, the price of all coffees will drop to 2/3 of the original price.
         p[:price] = (p[:price] * 2 / 3).round(2) if quantity >= 3
@@ -36,7 +39,7 @@ class CalculatePurchaseService
       end
     end
 
-    { products: items, total: total, success: true }
+    { products: items, total: total.round(2), success: true }
   rescue => e
     Rails.logger.error(e.backtrace.join('\n'))
     { products: [], total: 0.00, success: false }
