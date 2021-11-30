@@ -71,7 +71,7 @@ class Cart extends React.Component {
                     <div className="container py-5">
                         <h1 className="display-4">Your Cart</h1>
                         <p className="lead text-muted">
-                            A list of all your purchases.
+                            Please check your shopping cart.
                         </p>
                     </div>
                 </section>

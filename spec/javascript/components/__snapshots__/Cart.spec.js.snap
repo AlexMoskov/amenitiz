@@ -16,7 +16,7 @@ exports[`Cart renders Cart component 1`] = `
       <p
         className="lead text-muted"
       >
-        A list of all your purchases.
+        Please check your shopping cart.
       </p>
     </div>
   </section>

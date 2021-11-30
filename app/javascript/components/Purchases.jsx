@@ -38,24 +38,18 @@ class Purchases extends React.Component {
     }
 
     render() {
-        const { message } = this.state;
-
         return (
             <React.Fragment>
                 <section className="jumbotron jumbotron-fluid text-center">
                     <div className="container py-5">
                         <h1 className="display-4">Your purchases</h1>
                         <p className="lead text-muted">
-                            We have pulled together our most popular products for you.
+                            A list of your recent purchases.
                         </p>
                     </div>
                 </section>
                 <div className="py-5">
                     <main className="container">
-                        {message && <div className="alert alert-success alert-dismissible fade show" role="alert">
-                            The product has been successfully added to your cart.
-                        </div>}
-
                         <div className="row">
                             { this.allPurchases() }
                         </div>

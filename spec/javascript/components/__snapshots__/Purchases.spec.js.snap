@@ -16,7 +16,7 @@ exports[`Purchases renders Purchases component 1`] = `
       <p
         className="lead text-muted"
       >
-        We have pulled together our most popular products for you.
+        A list of your recent purchases.
       </p>
     </div>
   </section>
