@@ -98,6 +98,11 @@ GEM
     diff-lcs (1.4.4)
     docile (1.4.0)
     erubi (1.10.0)
+    factory_girl (4.9.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.9.0)
+      factory_girl (~> 4.9.0)
+      railties (>= 3.0.0)
     ffi (1.15.4)
     given_core (3.8.2)
       sorcerer (>= 0.3.7)
@@ -276,6 +281,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   database_cleaner-active_record
+  factory_girl_rails
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg
